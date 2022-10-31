@@ -6,14 +6,14 @@ using UnityEngine.UI;
 public class score_system : MonoBehaviour
 {
 
-    public GameObject Can;
-    public static float score;
+    
+    public static int score;
     private bool HasFallen = false;
     public Text ScoreTXT;
     // Start is called before the first frame update
     void Start()
     {
-        score = 0;
+        //ScoreTXT.text = score.ToString();
     }
 
     // Update is called once per frame
@@ -24,12 +24,15 @@ public class score_system : MonoBehaviour
 
     public void OnTriggerEnter(Collider other)
     {
-        if(other.tag == "Ground" & HasFallen == false)
+        if(other.tag == "Ground" & !HasFallen)
         {
             score += 1;
             HasFallen = true;
-            print("The can has fallen, current score: " + score);
-            ScoreTXT.text = "Score: " + score;
+            
+
+
         }
+        
     }
+
 }
