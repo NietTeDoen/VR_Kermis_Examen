@@ -14,7 +14,7 @@ public class MenuManager : MonoBehaviour
     void Start()
     {
         ScoreTXT.text = score_system.score.ToString();
-        score_system.score = 145;
+        //score_system.score = 145;
     }
 
     // Update is called once per frame
