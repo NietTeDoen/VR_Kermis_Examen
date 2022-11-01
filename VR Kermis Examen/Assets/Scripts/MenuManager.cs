@@ -14,10 +14,7 @@ public class MenuManager : MonoBehaviour
     void Start()
     {
         ScoreTXT.text = score_system.score.ToString();
-        foreach (Button But in SoldItems)
-        {
-            But.interactable = false;
-        }
+        score_system.score = 145;
     }
 
     // Update is called once per frame
@@ -45,16 +42,41 @@ public class MenuManager : MonoBehaviour
             score_system.score -= 50;
             ScoreTXT.text = score_system.score.ToString();
             PlayerPrefs.SetInt(ItemID.ToString(), 1); //Int 1 means having the item 0 means you don't have the item
-            int i = SoldItems.Length;
-            if(SoldItems.Length > 0)
+            switch (ItemID)
             {
-                SoldItems.SetValue(ItemPurchase, SoldItems.Length - 1);
+                case 1:
+                    PurchaseManager.BMagazin1 = true;
+                    print(PurchaseManager.BMagazin1);
+                    break;
+                case 2:
+                    PurchaseManager.BMagazin2 = true;
+                    break;
+                case 3:
+                    PurchaseManager.BMagazin3 = true;
+                    break;
+                case 4:
+                    PurchaseManager.BMagazin4 = true;
+                    break;
+                case 5:
+                    PurchaseManager.BMagazin5 = true;
+                    break;
+                case 6:
+                    PurchaseManager.BMagazin6 = true;
+                    break;
+                case 7:
+                    PurchaseManager.BMagazin7 = true;
+                    break;
+                case 8:
+                    PurchaseManager.BMagazin8 = true;
+                    break;
+                case 9:
+                    PurchaseManager.BMagazin9 = true;
+                    break;
+                case 10:
+                    PurchaseManager.BMagazin10 = true;
+                    break;
 
-            } else
-            {
-                SoldItems.SetValue(ItemPurchase, SoldItems.Length);
             }
-            print(SoldItems.Length);
 
         }
 
