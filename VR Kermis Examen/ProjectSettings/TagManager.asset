@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - Ground
+  - Cans
+  - CanScript
+  - CanPrefab
   layers:
   - Default
   - TransparentFX
