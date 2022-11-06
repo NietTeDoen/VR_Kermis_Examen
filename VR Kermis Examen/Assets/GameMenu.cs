@@ -2,9 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+using UnityEngine.Audio;
 
 public class GameMenu : MonoBehaviour
 {
+    public AudioMixerGroup Master;
+    public Slider MasterVolume;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,5 +24,10 @@ public class GameMenu : MonoBehaviour
     public void GoBackToMenu()
     {
         SceneManager.LoadScene(0);
+    }
+
+    public void sliderchange()
+    {
+        
     }
 }
