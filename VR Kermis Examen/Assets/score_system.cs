@@ -10,6 +10,7 @@ public class score_system : MonoBehaviour
     public static int score;
     private bool HasFallen = false;
 
+
     public void Start()
     {
         CanHandler = GameObject.FindGameObjectWithTag("CanScript");
@@ -18,6 +19,6 @@ public class score_system : MonoBehaviour
 
     public void OnTriggerEnter(Collider other)
     {if (other.tag == "Ground" & !HasFallen)
-        { score += 1; HasFallen = true; 
+        { score += 1; HasFallen = true;
             RS.coroutineStarter();}}
 }

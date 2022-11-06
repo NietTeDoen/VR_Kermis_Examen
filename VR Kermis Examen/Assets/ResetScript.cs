@@ -16,17 +16,33 @@ public class ResetScript : MonoBehaviour
     public GameObject prefabBall;
     public Text ScoreTXT;
 
+    public static bool Audioplays;
+
+    public AudioSource source;
+    public AudioClip Aclip;
+
     void Start()
     {ScoreTXT.text = score_system.score.ToString();}
 
     void Update()
     {ScoreTXT.text = score_system.score.ToString(); 
+        if (ball.transform.position.y <= -3)
+        {
+            GameObject.Destroy(ball); ball = Instantiate(prefabBall);
+        }
     }
     public IEnumerator CanReset()
     {
+        if (!Audioplays)
+        {
+            source.clip = Aclip;
+            source.Play();
+        }
+        Audioplays = true;
         ScoreTXT.text = score_system.score.ToString(); GameObject.Destroy(Cans, 1.5f); yield return new WaitForSeconds(2f); GameObject.Destroy(ball); CansList.RemoveRange(0, CansList.Count);
         Cans = Instantiate(prefabCans); ball = Instantiate(prefabBall);
         GameObjectCount = false;
+        Audioplays = false;
         yield return null; StopCoroutine("CanReset");
     }
     public void coroutineStarter(){
