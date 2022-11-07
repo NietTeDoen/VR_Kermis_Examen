@@ -7,7 +7,7 @@ using UnityEngine.Audio;
 
 public class GameMenu : MonoBehaviour
 {
-    public Slider MasterVolume;
+    public Slider MasterSlider;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,7 +27,7 @@ public class GameMenu : MonoBehaviour
 
     public void sliderchange()
     {
-        AudioListener.volume = MasterVolume.value;
+        AudioListener.volume = MasterSlider.value;
     }
 
     public void SavePlayer()

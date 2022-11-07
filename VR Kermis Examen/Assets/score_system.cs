@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class score_system : MonoBehaviour, Isaveable
+public class score_system : MonoBehaviour
 {
     public GameObject CanHandler;
     public ResetScript RS;
@@ -23,23 +23,5 @@ public class score_system : MonoBehaviour, Isaveable
         { score += 1; HasFallen = true;
             RS.coroutineStarter();}}
 
-    public object SaveState()
-    {
-        return new SaveData()
-        {
-            Datascore = score
-        };
-    }
-
-    public void LoadState(object state)
-    {
-        var saveData = (SaveData)state;
-        score = (int)saveData.Datascore;
-    }
-
-   [Serializable]
-    public struct SaveData
-    {
-        public float Datascore;
-    }
+    
 }
