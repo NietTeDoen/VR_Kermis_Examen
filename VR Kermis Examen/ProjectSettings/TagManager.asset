@@ -8,6 +8,7 @@ TagManager:
   - Cans
   - CanScript
   - CanPrefab
+  - MasterSlider
   layers:
   - Default
   - TransparentFX

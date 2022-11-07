@@ -15,6 +15,7 @@ public class PurchaseManager : MonoBehaviour
     public Button Magazin8;
     public Button Magazin9;
     public Button Magazin10;
+    public Text ScoreTXT;
 
     public static bool BMagazin1 = false;
     public static bool BMagazin2 = false;
@@ -81,5 +82,6 @@ public class PurchaseManager : MonoBehaviour
         {
             Magazin10.interactable = false;
         }
+        ScoreTXT.text = "points: " + score_system.score.ToString();
     }
 }
